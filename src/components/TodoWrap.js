@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState, useEffect } from 'react'
 import AddTodo from './AddTodo'
 import { v4 as uuidv4 } from 'uuid'
 import TodoList from './TodoList'
@@ -6,7 +6,15 @@ import TodoList from './TodoList'
 uuidv4()
 function TodoWrap() {
 
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState(() => {
+    const saved = localStorage.getItem('todos')
+    return saved ? JSON.parse(saved) : []
+    })
+
+  useEffect(() => {
+    localStorage.setItem('todos', JSON.stringify(todos))
+  }, [todos])
+
 
   const handleEdit = (id, newText) => {
     setTodos((prev) =>
