@@ -41,6 +41,21 @@ body {
     cursor: pointer;
 }
 
+.error-message {
+  margin-top: 8px;
+  padding: 8px 12px;
+  background-color: #ffdddd;
+  color: #d8000c;
+  border: 1px solid #d8000c;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  width: 250px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
 .todoList {
     padding: 0;
     margin: 0;

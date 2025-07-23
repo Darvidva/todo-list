@@ -35,7 +35,7 @@ function TodoWrap() {
   const handleDelete = (id) => {
     setTodos((prev) => prev.filter((todo) => todo.id !== id))
   }
-  
+
   const handleAdd = (text) => {
     setTodos([...todos, {id: uuidv4(), task: text, completed: false}])
   }
